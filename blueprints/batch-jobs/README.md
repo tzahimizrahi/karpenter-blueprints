@@ -16,7 +16,7 @@ If you want to first observe the default behaviour of pods being disrupted durin
 If you want to directly see how to avoid the disruption of jobs by the consolidation process, jump to [Preventing jobs of being evicted](#preventing-jobs-of-being-evicted).
 
 ### (optional) Simulating the default behaviour
-This section simulates the default behaviour of the pods explained before, in which the Karpenter consolidation process disrupts the pods running the jobs, and re-schedule them into the cheaper node. To simulate it, deploy the [workloads-evicted yaml](/karpenter-blueprints/blueprints/batch-jobs/workloads-evicted.yaml):
+This section simulates the default behaviour of the pods explained before, in which the Karpenter consolidation process disrupts the pods running the jobs, and re-schedule them into the cheaper node. To simulate it, deploy the [workloads-evicted yaml](/blueprints/batch-jobs/workloads-evicted.yaml):
 ```
 $> kubectl apply -f workloads-evicted.yaml
 deployment.apps/nginx created
@@ -76,7 +76,7 @@ If you executed the [optional](#optional-simulating-the-default-behaviour) part,
 kubectl delete -f workloads-evicted.yaml
 ```
 
-Let's start by deploying the workloads defined in the [workloads-not-evicted yaml](/karpenter-blueprints/blueprints/batch-jobs/workloads-not-evicted.yaml):
+Let's start by deploying the workloads defined in the [workloads-not-evicted yaml](/blueprints/batch-jobs/workloads-not-evicted.yaml):
 ```
 $> kubectl apply -f workloads-not-evicted.yaml
 deployment.apps/nginx created
@@ -88,7 +88,21 @@ This will create three pods that require **11 vCPU** in total:
 -  2-minutes job - 7 vCPU required
 - 5-minutes job - 2 vCPU required
 
-If you explore the [workloads-not-evicted yaml](/karpenter-blueprints/blueprints/batch-jobs/workloads-not-evicted.yaml), the `karpenter.sh/do-not-disrupt: "true"` annotations have been added to both jobs specifications.
+If you explore the [workloads-not-evicted yaml](/![image](https://github.com/user-attachments/assets/ed36f4fa-3454-4f0a-b878-b8c75e02f0f1)
+![image](https://github.com/user-attachments/assets/611e1309-4311-4301-b199-8350a4cf194f)
+![image](https://github.com/user-attachments/assets/845ecbf7-f4c7-407f-bde2-75dc874d2708)
+![image](https://github.com/user-attachments/assets/53946a9e-4d1b-429c-b223-037309318c47)
+![image](https://github.com/user-attachments/assets/dca046af-b990-4848-9367-3c52e2da23b7)
+![image](https://github.com/user-attachments/assets/a7051451-8e46-4618-a89c-fc77f1b7df4b)
+![image](https://github.com/user-attachments/assets/b9c08b3a-c3f2-49aa-99ea-c89bf5814975)
+![image](https://github.com/user-attachments/assets/e51e94d5-71b0-419f-873d-64798f033ee9)
+![image](https://github.com/user-attachments/assets/60abb9aa-bdee-4b05-a0e9-14471de0755c)
+![image](https://github.com/user-attachments/assets/d5375d0d-1697-4750-9e98-7fc02c17607f)
+![image](https://github.com/user-attachments/assets/7f2cc65d-26ae-4ee3-9d91-b543956f6405)
+![image](https://github.com/user-attachments/assets/741bef5f-8c46-4c00-a44e-1519d6046320)
+![image](https://github.com/user-attachments/assets/f2ede33c-27a6-4d49-8803-fbc922834f2d)
+![image](https://github.com/user-attachments/assets/3f547d9e-a41c-4760-a1ea-706e77fdaf75)
+blueprints/batch-jobs/workloads-not-evicted.yaml), the `karpenter.sh/do-not-disrupt: "true"` annotations have been added to both jobs specifications.
 
 Go to [Results section](#results) to check the behaviour.
 
